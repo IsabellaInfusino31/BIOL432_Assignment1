@@ -4,26 +4,38 @@ output: html_document
 date: "2025-01-07"
 author: "Isabella Infusino"
 ---
+GitHub Repository Link:
 (https://github.com/IsabellaInfusino31/BIOL432_Assignment1)
-```{r}
-
+```{r }
+# creates hypothetical dataset
 source("dataGenerato.R")
 
+# import previously created data and calculates and adds a new volume column
 source("volumeEstimato.R")
 
 ```
+
 ```{r}
+
+# Sort data by species
 
 MyDataSpecies <- MyData %>%
   arrange(Species)
 
+# Sort data by observer
+
 MyDataObserver <- MyData %>%
   arrange(Observer)
+
+# Sort data by volume
 
 MyDataVolume <- MyData %>%
   arrange(Volume)
 
 ```
+
+*Table 1: The average limb volume for each species*
+
 ```{r}
 
 MyDataAverageVolume <- MyData %>%
@@ -33,6 +45,9 @@ MyDataAverageVolume <- MyData %>%
 MyDataAverageVolume
 
 ```
+
+*Table 2: The number of observations for each species by each observer*
+
 ```{r}
 
 MyDataSpeciesObserver <- MyData %>%
@@ -42,17 +57,17 @@ MyDataSpeciesObserver <- MyData %>%
 MyDataSpeciesObserver
 
 ```
+*Figure 1: distribution of limb volumes for each species observed* 
 ```{r}
 
 library(ggplot2)
 
-ggplot(MyData, aes(x = Species, y = Volume)) + geom_boxplot(fill = "lightgreen", color = "darkgreen", outlier.color = "black") + labs(title = "Volume Distribution for 5 Species", x = "Species", y = "Volume")
+ggplot(MyData, aes(x = Species, y = Volume)) + geom_boxplot(fill = "lightgreen", color = "darkgreen", outlier.color = "black") + labs(title = "Limb Volume Distribution for 5 Species", x = "Species", y = "Volume")
 
 ```
+  
+*Figure 2: frequency histogram distributions of limb volumes for each species observed*
 ```{r}
 ggplot(MyData, aes(x = Volume)) + geom_histogram(fill = "lightgreen", color = "darkgreen") + facet_wrap(~Species) + labs(title = "Limb Volume Distribution for 5 Species", x = "Volume", y = "Frequency")
 
-
 ```
-
-
