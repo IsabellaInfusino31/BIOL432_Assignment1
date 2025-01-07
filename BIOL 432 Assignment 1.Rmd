@@ -2,9 +2,57 @@
 title: "BIOL 432 Assignment 1"
 output: html_document
 date: "2025-01-07"
+author: "Isabella Infusino"
 ---
-
+(https://github.com/IsabellaInfusino31/BIOL432_Assignment1)
 ```{r}
 
+source("dataGenerato.R")
+
+source("volumeEstimato.R")
+
 ```
+```{r}
+
+MyDataSpecies <- MyData %>%
+  arrange(Species)
+
+MyDataObserver <- MyData %>%
+  arrange(Observer)
+
+MyDataVolume <- MyData %>%
+  arrange(Volume)
+
+```
+```{r}
+
+MyDataAverageVolume <- MyData %>%
+  group_by(Species) %>%
+  summarize(Average_Volume = mean(Volume))
+
+MyDataAverageVolume
+
+```
+```{r}
+
+MyDataSpeciesObserver <- MyData %>%
+  group_by(Species, Observer) %>%
+  summarize(Observations = n())
+
+MyDataSpeciesObserver
+
+```
+```{r}
+
+library(ggplot2)
+
+ggplot(MyData, aes(x = Species, y = Volume)) + geom_boxplot(fill = "lightgreen", color = "darkgreen", outlier.color = "black") + labs(title = "Volume Distribution for 5 Species", x = "Species", y = "Volume")
+
+```
+```{r}
+ggplot(MyData, aes(x = Volume)) + geom_histogram(fill = "lightgreen", color = "darkgreen") + facet_wrap(~Species) + labs(title = "Limb Volume Distribution for 5 Species", x = "Volume", y = "Frequency")
+
+
+```
+
 
