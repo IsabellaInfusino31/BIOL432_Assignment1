@@ -57,7 +57,7 @@ MyDataSpeciesObserver <- MyData %>%
 MyDataSpeciesObserver
 
 ```
-*Figure 1: distribution of limb volumes for each species observed* 
+*Figure 1: distribution of limb volumes for each species observed*
 ```{r}
 
 library(ggplot2)
