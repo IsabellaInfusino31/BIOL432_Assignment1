@@ -1,6 +1,6 @@
 ---
 title: "Regex"
-author: "Isabella Infusino"
+author: "Isabella Infusino 20218982"
 date: "2025-02-03"
 output: html_document
 ---
@@ -18,9 +18,6 @@ MData <- read.csv("measurements.csv")
 
 MData <- MData %>% 
   mutate(Sp = gsub("^([A-Za-z])[a-zA-Z]*\\s", "\\1. ", Species)) #find first letter, remaining letters, find space, replace with first letter + period + space
-
-
-
 
 
 MDataShort <- MData %>%
