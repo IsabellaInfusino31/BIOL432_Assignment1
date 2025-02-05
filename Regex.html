@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Isabella Infusino" />
+<meta name="author" content="Isabella Infusino 20218982" />
 
 <meta name="date" content="2025-02-03" />
 
@@ -351,7 +351,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Regex</h1>
-<h4 class="author">Isabella Infusino</h4>
+<h4 class="author">Isabella Infusino 20218982</h4>
 <h4 class="date">2025-02-03</h4>
 
 </div>
@@ -372,8 +372,8 @@ source(&quot;volumeEstimato.R&quot;)</code></pre>
 ##     intersect, setdiff, setequal, union</code></pre>
 <pre class="r"><code>MData &lt;- read.csv(&quot;measurements.csv&quot;)
 
-MData &lt;- MData %&gt;%
-  mutate(Sp = gsub(&quot;^([A-Za-z])[a-zA-Z]*\\s&quot;, &quot;\\1. &quot;, Species))
+MData &lt;- MData %&gt;% 
+  mutate(Sp = gsub(&quot;^([A-Za-z])[a-zA-Z]*\\s&quot;, &quot;\\1. &quot;, Species)) #find first letter, remaining letters, find space, replace with first letter + period + space
 
 
 MDataShort &lt;- MData %&gt;%
@@ -384,106 +384,106 @@ write.csv(MDataShort, file = &quot;MeasShort.csv&quot;, row.names = FALSE)
 
 MDataShort</code></pre>
 <pre><code>##                  Sp Limb_Width Limb_Length   Observer
-## 1   S. serpentarius 0.90304179  1.25856696 Observer A
-## 2     F. peregrinus 2.77953754  0.69423068 Observer B
-## 3      P. haliaetus 1.07120729  0.09039960 Observer B
-## 4      P. haliaetus 1.24639285  5.38494678 Observer A
-## 5   S. serpentarius 1.01194693  1.44037195 Observer B
-## 6   S. serpentarius 1.80890465  0.83456189 Observer A
-## 7   S. serpentarius 1.76738302  3.30269164 Observer A
-## 8          C. albus 3.99197309  2.29511486 Observer B
-## 9      P. haliaetus 0.10395074  2.24535927 Observer B
-## 10  S. serpentarius 1.03066720  1.54779808 Observer A
-## 11    F. peregrinus 1.13721472  3.04764257 Observer A
-## 12     P. haliaetus 1.65420804  1.68579150 Observer B
-## 13     P. haliaetus 1.78945666  1.23993555 Observer C
-## 14  S. serpentarius 0.72818331  2.11429670 Observer C
-## 15     P. haliaetus 3.63763504  3.01452454 Observer B
-## 16         C. albus 1.90242207  2.38280793 Observer A
-## 17         S. varia 0.26134316  2.17175233 Observer C
-## 18         C. albus 1.80311973  3.23183681 Observer A
-## 19         S. varia 0.41077168  3.18303366 Observer A
-## 20  S. serpentarius 2.43237367  0.79236144 Observer C
-## 21         C. albus 0.48254670  2.67417936 Observer A
-## 22         S. varia 2.75057075  2.94607523 Observer A
-## 23     P. haliaetus 0.14474716  2.94901713 Observer C
-## 24  S. serpentarius 2.99002603  0.25981960 Observer B
-## 25     P. haliaetus 2.14870224  0.10132717 Observer C
-## 26         C. albus 2.02051127  0.92919155 Observer C
-## 27         C. albus 0.80568000  1.00731348 Observer C
-## 28         C. albus 3.06353527  0.11868770 Observer A
-## 29     P. haliaetus 0.23145713  1.09647082 Observer C
-## 30         C. albus 0.27139339  4.62106932 Observer C
-## 31         S. varia 0.47502317  0.13039199 Observer C
-## 32     P. haliaetus 0.95259035  2.85190844 Observer B
-## 33  S. serpentarius 1.23484231  4.89686681 Observer B
-## 34         S. varia 2.60467979  0.98754519 Observer A
-## 35  S. serpentarius 0.15593103  3.30534036 Observer C
-## 36    F. peregrinus 2.18489009  4.17113967 Observer B
-## 37  S. serpentarius 2.69787474  3.52006439 Observer B
-## 38         S. varia 4.04120360  0.49074480 Observer C
-## 39         S. varia 1.38640285  0.91181796 Observer B
-## 40  S. serpentarius 1.26175876  1.61669276 Observer B
-## 41     P. haliaetus 0.44399591  2.32457097 Observer B
-## 42         S. varia 2.16531537  3.34656054 Observer B
-## 43         C. albus 1.10345537  0.31589556 Observer B
-## 44  S. serpentarius 0.71341376  1.71643816 Observer A
-## 45  S. serpentarius 0.65765163  0.48308765 Observer C
-## 46         C. albus 1.55004613  0.94411054 Observer C
-## 47  S. serpentarius 0.13787511  2.03493150 Observer B
-## 48         C. albus 2.19412256  2.19886616 Observer A
-## 49         C. albus 0.29740414  2.65233589 Observer B
-## 50    F. peregrinus 2.04566262  0.06635006 Observer C
-## 51  S. serpentarius 0.11331286  1.06613930 Observer C
-## 52    F. peregrinus 1.46459366  1.93480630 Observer B
-## 53  S. serpentarius 1.40056459  1.88330880 Observer B
-## 54     P. haliaetus 1.67523823  2.46530209 Observer A
-## 55  S. serpentarius 0.98190156  2.06830686 Observer B
-## 56  S. serpentarius 0.39733733  3.42887608 Observer C
-## 57  S. serpentarius 4.01497639  0.68052398 Observer A
-## 58    F. peregrinus 2.06092286  2.53691809 Observer C
-## 59     P. haliaetus 1.43787219  0.24633725 Observer C
-## 60    F. peregrinus 1.03929112  0.34747484 Observer C
-## 61         C. albus 0.21923075  0.78565291 Observer C
-## 62         S. varia 0.68043191  2.55648325 Observer C
-## 63  S. serpentarius 0.29887189  1.10962989 Observer A
-## 64         C. albus 3.25362646  0.18232407 Observer C
-## 65         S. varia 0.13747944  1.02265900 Observer B
-## 66     P. haliaetus 1.29594284  0.00908017 Observer A
-## 67     P. haliaetus 1.26011840  2.32143715 Observer B
-## 68  S. serpentarius 1.04458336  0.86773261 Observer B
-## 69         C. albus 2.76493806  2.85491966 Observer B
-## 70         S. varia 1.45154342  0.03282797 Observer A
-## 71     P. haliaetus 1.61092719  1.52731081 Observer C
-## 72     P. haliaetus 0.88293749  1.63120326 Observer B
-## 73     P. haliaetus 1.76668282  3.78563651 Observer C
-## 74         C. albus 0.56400318  0.07540073 Observer C
-## 75         C. albus 0.78479431  2.45484932 Observer C
-## 76     P. haliaetus 2.26013428  1.12248216 Observer C
-## 77         C. albus 0.11691435  1.51478087 Observer A
-## 78         S. varia 0.27175383  4.66730402 Observer A
-## 79     P. haliaetus 1.21357898  0.60118680 Observer B
-## 80         C. albus 1.53375875  0.93304964 Observer B
-## 81         C. albus 0.21050545  0.09137381 Observer B
-## 82    F. peregrinus 1.81067679  1.91240076 Observer C
-## 83     P. haliaetus 0.15804722  2.44663892 Observer B
-## 84         C. albus 1.23851160  1.74195854 Observer B
-## 85  S. serpentarius 0.04530031  0.42582468 Observer C
-## 86    F. peregrinus 3.06465710  0.39814103 Observer B
-## 87         C. albus 2.05816261  2.81274757 Observer A
-## 88  S. serpentarius 0.49060181  1.73051473 Observer B
-## 89         S. varia 0.76679049  2.19957385 Observer C
-## 90  S. serpentarius 1.43649628  0.22619343 Observer B
-## 91    F. peregrinus 0.98087707  0.46024005 Observer B
-## 92    F. peregrinus 3.62548168  1.29715583 Observer A
-## 93         C. albus 1.19063624  1.63260733 Observer B
-## 94  S. serpentarius 1.13115722  1.59859988 Observer A
-## 95         C. albus 2.60314730  0.40493006 Observer C
-## 96         C. albus 0.82752819  0.26810951 Observer A
-## 97         C. albus 2.41515003  1.27083747 Observer B
-## 98     P. haliaetus 1.33558661  3.87206739 Observer A
-## 99    F. peregrinus 0.97338206  2.42830615 Observer C
-## 100   F. peregrinus 0.77459660  0.70856054 Observer A</code></pre>
+## 1      P. haliaetus 2.55739660  1.24672536 Observer C
+## 2          C. albus 2.14146969  1.32688990 Observer C
+## 3   S. serpentarius 2.18162072  0.74094978 Observer A
+## 4          S. varia 0.18398283  2.77289718 Observer B
+## 5          S. varia 0.92472892  4.00279803 Observer C
+## 6      P. haliaetus 1.07735550  0.42808078 Observer A
+## 7          S. varia 0.62065649  1.17305554 Observer B
+## 8          S. varia 1.33638370  3.84028657 Observer C
+## 9     F. peregrinus 1.51747336  0.52521200 Observer C
+## 10         S. varia 0.27434629  1.08154655 Observer A
+## 11    F. peregrinus 1.35976202  1.08297222 Observer B
+## 12         C. albus 0.13667478  3.15452061 Observer A
+## 13         S. varia 0.48910380  1.37405017 Observer C
+## 14  S. serpentarius 0.82688773  2.33006495 Observer A
+## 15         C. albus 0.64224461  1.13251558 Observer A
+## 16         C. albus 0.53962543  1.11795919 Observer A
+## 17         C. albus 0.78007194  1.64468019 Observer B
+## 18         C. albus 0.26299946  1.92961573 Observer C
+## 19         S. varia 0.50009137  1.45356089 Observer B
+## 20     P. haliaetus 1.70030441  2.93809188 Observer C
+## 21         S. varia 1.41334542  2.27951393 Observer A
+## 22    F. peregrinus 0.17920485  2.74865419 Observer C
+## 23         S. varia 0.79860194  0.82777960 Observer A
+## 24     P. haliaetus 2.26794949  2.33503673 Observer A
+## 25     P. haliaetus 0.52510286  1.76330546 Observer A
+## 26         C. albus 1.86989263  0.62751018 Observer A
+## 27         S. varia 2.11466890  1.62937089 Observer B
+## 28     P. haliaetus 0.03890302  2.59764549 Observer C
+## 29    F. peregrinus 1.45540045  0.76440756 Observer B
+## 30  S. serpentarius 0.34266298  0.61932645 Observer B
+## 31  S. serpentarius 0.21788974  0.73869637 Observer B
+## 32         S. varia 1.88289029  2.46566880 Observer A
+## 33  S. serpentarius 1.45203249  2.15728273 Observer C
+## 34         C. albus 0.42436085  0.73723395 Observer C
+## 35         S. varia 0.78381906  0.99855672 Observer A
+## 36         S. varia 0.32565894  1.33080555 Observer B
+## 37    F. peregrinus 0.92679372  0.42188474 Observer B
+## 38         S. varia 1.68783145  2.40701848 Observer C
+## 39         C. albus 0.03475000  2.13547283 Observer C
+## 40         S. varia 2.00511761  0.99763344 Observer C
+## 41         S. varia 0.44083605  1.82747058 Observer C
+## 42         C. albus 0.10102999  1.98541607 Observer A
+## 43  S. serpentarius 3.62318129  3.37587410 Observer B
+## 44         C. albus 0.25840182  2.23608199 Observer C
+## 45         S. varia 0.08484181  0.08858543 Observer C
+## 46     P. haliaetus 1.42994353  0.07206113 Observer C
+## 47     P. haliaetus 0.42209095  2.16496680 Observer C
+## 48    F. peregrinus 1.56483263  1.09039626 Observer B
+## 49         S. varia 0.09876252  0.38847838 Observer B
+## 50     P. haliaetus 1.36548283  0.89253377 Observer A
+## 51         S. varia 0.23671948  0.49741700 Observer C
+## 52  S. serpentarius 2.57506826  0.16909313 Observer A
+## 53         C. albus 0.98100532  2.21282173 Observer C
+## 54         S. varia 0.24970276  3.10979493 Observer C
+## 55         S. varia 1.11228175  0.43332661 Observer B
+## 56         C. albus 0.07822735  2.45678528 Observer C
+## 57  S. serpentarius 1.37324159  3.07758651 Observer B
+## 58    F. peregrinus 0.83128251  1.20256108 Observer A
+## 59    F. peregrinus 1.60077400  0.07474622 Observer C
+## 60    F. peregrinus 1.35337342  0.82987218 Observer B
+## 61    F. peregrinus 1.61613218  0.79477163 Observer B
+## 62         S. varia 0.23420214  1.84966260 Observer C
+## 63         C. albus 0.32022279  1.09034553 Observer C
+## 64         S. varia 1.53423761  3.01328799 Observer C
+## 65  S. serpentarius 0.61542495  1.19479735 Observer C
+## 66         C. albus 2.09356847  0.33558716 Observer C
+## 67    F. peregrinus 1.38937154  3.17527440 Observer B
+## 68         S. varia 3.75075166  0.74090893 Observer C
+## 69         S. varia 3.43957651  1.92007650 Observer B
+## 70         S. varia 0.20988764  2.39897564 Observer A
+## 71         S. varia 1.82268945  0.82860646 Observer A
+## 72         S. varia 0.35178776  0.57547062 Observer B
+## 73    F. peregrinus 1.58708471  3.27926359 Observer B
+## 74         C. albus 0.73659061  2.45898420 Observer A
+## 75    F. peregrinus 2.32209340  1.80904817 Observer C
+## 76  S. serpentarius 0.01755949  0.50335141 Observer A
+## 77     P. haliaetus 0.99140288  2.86291162 Observer B
+## 78     P. haliaetus 1.16502675  1.11685781 Observer C
+## 79         C. albus 0.66168842  1.95487934 Observer C
+## 80     P. haliaetus 0.63166406  2.06834334 Observer A
+## 81     P. haliaetus 2.04123571  1.87998143 Observer B
+## 82     P. haliaetus 1.69878289  0.62929221 Observer B
+## 83  S. serpentarius 2.67817562  0.07028430 Observer C
+## 84     P. haliaetus 0.17092112  0.67402586 Observer A
+## 85         S. varia 0.01239644  1.51910504 Observer C
+## 86    F. peregrinus 0.30740189  3.23573000 Observer A
+## 87         S. varia 3.03108344  0.42294808 Observer B
+## 88         S. varia 0.18864307  1.96392250 Observer B
+## 89  S. serpentarius 2.25573179  1.09611998 Observer A
+## 90         C. albus 0.83551459  3.54832490 Observer A
+## 91  S. serpentarius 0.88718951  1.19912115 Observer A
+## 92     P. haliaetus 0.94561378  3.94235226 Observer B
+## 93         C. albus 0.67906378  3.07277500 Observer B
+## 94     P. haliaetus 3.62121101  2.15424071 Observer A
+## 95         S. varia 2.93633450  1.07081722 Observer B
+## 96         C. albus 0.54203441  1.46614025 Observer B
+## 97    F. peregrinus 1.30506810  0.19609529 Observer C
+## 98    F. peregrinus 0.99561461  0.76501803 Observer B
+## 99  S. serpentarius 0.13823705  3.22544802 Observer A
+## 100 S. serpentarius 0.80531445  3.41360304 Observer C</code></pre>
 
 
 

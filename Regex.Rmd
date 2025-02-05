@@ -4,7 +4,8 @@ author: "Isabella Infusino 20218982"
 date: "2025-02-03"
 output: html_document
 ---
-
+GitHub Repository Link:
+(https://github.com/IsabellaInfusino31/BIOL432_Assignment1)
 ```{r }
 # creates hypothetical dataset
 source("dataGenerato.R")
