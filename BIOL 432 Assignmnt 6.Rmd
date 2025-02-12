@@ -2,15 +2,16 @@
 title: "BIOL432_Assignment6"
 author: "Isabella Infusino"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 GitHub Repository Link:
 (https://github.com/IsabellaInfusino31/BIOL432_Assignment1)
 
-```{r }
 
-install.packages(c("doParallel", "parallel", "foreach"))
+```{r }
 
 library(doParallel)
 library(parallel)
@@ -19,7 +20,7 @@ library(foreach)
 c <- detectCores() # number of cores: 8
 
 ```
-
+Serial loop:
 ```{r }
 
 x1 <- Sys.time()
@@ -37,7 +38,7 @@ x2 <- Sys.time()
 RunTime = x2 - x1
 RunTime
 ```
-
+Parallel loop:
 ```{r }
 
 cores <- parallel::makeCluster(c - 1) 
@@ -59,3 +60,5 @@ parallel::stopCluster(cores)
 RunTime = x2 - x1
 RunTime
 ```
+
+The run-time for the parallel loop is significantly less than the serial loop. This is because the loop is being broken into chunks in parallel. Running the repeating loop at the same time. while the serial loop must run through the loop one by one 4000 times. 
