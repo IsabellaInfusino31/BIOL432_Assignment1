@@ -1,0 +1,61 @@
+---
+title: "BIOL432_Assignment6"
+author: "Isabella Infusino"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+GitHub Repository Link:
+(https://github.com/IsabellaInfusino31/BIOL432_Assignment1)
+
+```{r }
+
+install.packages(c("doParallel", "parallel", "foreach"))
+
+library(doParallel)
+library(parallel)
+library(foreach)
+
+c <- detectCores() # number of cores: 8
+
+```
+
+```{r }
+
+x1 <- Sys.time()
+
+y = 1
+
+for (i in 1:4000) {
+  
+  y = mean(rnorm(100000, mean = 10, sd = 3)) 
+  
+}
+
+x2 <- Sys.time()
+
+RunTime = x2 - x1
+RunTime
+```
+
+```{r }
+
+cores <- parallel::makeCluster(c - 1) 
+
+doParallel::registerDoParallel(cores)
+
+x1 <- Sys.time()
+
+foreach(i = 1:4000, .combine = rbind) %dopar%{
+  
+  y = mean(rnorm(100000, mean = 10, sd = 3)) 
+    
+}
+
+x2 <- Sys.time()
+
+parallel::stopCluster(cores)
+
+RunTime = x2 - x1
+RunTime
+```
